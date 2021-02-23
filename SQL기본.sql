@@ -1,0 +1,64 @@
+#날짜 : 2020/11/16
+#이름 : 김은표
+#내용 : SQL 기본 실습하기
+
+# 실습하기 2-1
+CREATE DATABASE;
+DROP DATABASE;
+
+#실습하기 2-2
+CREATE TABLE `USER1`(
+	`uid` VARCHAR(20),
+	`NAME` VARCHAR(20),
+	`hp` VARCHAR(13),
+	`age` INT
+);
+
+DROP TABLE `USE1`;
+
+#실습하기 2-3
+INSERT INTO `USER1` VALUES('A101', '김유신', '010-1234-1234',25);
+INSERT INTO `USER1` VALUES('A102', '김춘추', '010-1234-2222',23);
+INSERT INTO `USER1` VALUES('A103', '장보고', '010-1234-3333',32);
+
+INSERT INTO `USER1` (AGE, NAME, UID, HP) 
+				VALUES (45, '감강찬', 'A104', '010-1234-4444');
+				
+INSERT INTO `USER1` SET 
+							NAME='이순신', 
+							AGE=51, 
+							HP='010-1234-5555', 
+							UID='A105';
+							
+#실습하기 2-4
+SELECT `UID`,`NAME`,`AGE`,`HP` FROM `USER1`;
+SELECT `NAME`,`UID`,`HP` FROM `USER1`;
+SELECT * FROM `USER1`;
+
+#실습하기 2-5
+UPDATE `USER1` SET `HP`='010-1234-1234';
+UPDATE `USER1` SET
+						`UID`='B101',
+						`NAME`='홍길동';
+						
+UPDATE `USER1` SET
+						`UID`='A101',
+						`NAME`='김유신';
+						WHERE
+							`AGE`=25;
+UPDATE `USER1` SET
+					`HP`='010-1234-1111' WHERE `NAME`='김유신';
+UPDATE `USER1` SET
+					`UID`='A102',
+					`NAME`='김춘추',
+					`HP`='010-1234-2222'
+						WHERE 
+							`AGE`=23;
+
+#실습하기 2-6
+DELETE FROM `USER1` WHERE `UID`='A101';
+DELETE FROM `USER1` WHERE `UID`='A102' AND `AGE`=32;
+DELETE FROM `USER1` WHERE `AGE` >= 40;
+					
+						
+
